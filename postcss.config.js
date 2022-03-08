@@ -13,12 +13,12 @@ module.exports = {
     "postcss-inline-svg": {},
     "postcss-plugin": {},
     "postcss-preset-env": {},
-    "postcss-pseudo-content-insert": {},
     "postcss-utilities": {},
     "rucksack-css": {},
   },
 };
 
+// "postcss-pseudo-content-insert": {},
 /* "postcss-css-variables": {
       preserve: true,
       preserveInjectedVariables: true,
