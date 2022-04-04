@@ -1,27 +1,45 @@
 module.exports = {
   plugins: {
-    autoprefixer: {},
-    doiuse: {
-      //? just use to check some times when you want.
-      // browsers: ["ie >= 8", "> 1%"],
-    },
+    doiuse: {},
     cssnano: {
-      preset: "cssnano-preset-default",
+      preset: [
+        "advanced",
+        process.env.NODE_ENV === "production"
+          ? { cssDeclarationSorter: false }
+          : {
+              cssDeclarationSorter: false,
+              convertValues: false,
+              reduceIdents: false,
+            },
+      ],
     },
-    "postcss-color-alpha": {},
+    "postcss-custom-media": {},
     "postcss-custom-selectors": {},
+    "postcss-import": {},
     "postcss-inline-svg": {},
+    "postcss-jit-props": require("open-props"),
     "postcss-plugin": {},
     "postcss-preset-env": {},
+    "postcss-pseudo-class-enter": {},
     "postcss-utilities": {},
+    tailwindcss: {},
     "rucksack-css": {},
   },
 };
 
-// "postcss-pseudo-content-insert": {},
-/* "postcss-css-variables": {
-      preserve: true,
-      preserveInjectedVariables: true,
-      preserveAtRulesOrder: true,
-      variables: {},
- }, */
+//* Instructions
+//& DoIUse Config
+// doiuse: { browsers: ["ie >= 8", "> 1%"],}
+
+//& Open-Props Config
+// 'postcss-jit-props': require('open-props'),
+//*  or
+// 'postcss-jit-props': {
+//   files: [require.resolve('open-props/style'),require.resolve('open-props/normalize')],
+// },
+
+//& CssNano
+// colormin: false,
+
+//& Autoprefixer
+// autoprefixer: {},
