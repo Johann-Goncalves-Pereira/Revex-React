@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App/App";
 
 //& Base Styles, all pages;
-import "./Styles/_base.scss";
-import "./Styles/_open-props.css";
+const stylesL01 = import.meta.globEager("./Styles/**/*.scss");
 
 ReactDOM.render(
   <React.StrictMode>
